@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZSOUND | Live Concert</title>
+    <meta
+      name="description"
+      content="ZSOUND live concert control page with full venue, output, and stage settings."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-3"></div>
+
+    <div class="app-shell">
+      <div class="phone-status" aria-label="phone status">
+        <span class="time">9:41</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>82%</span>
+        </div>
+      </div>
+
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">Z</div>
+          <div class="brand-copy">
+            <div class="brand-name">ZSOUND</div>
+            <div class="brand-subtitle">Live Concert</div>
+          </div>
+        </div>
+
+        <div class="session-chip">
+          <span class="status-dot"></span>
+          Dante Live
+        </div>
+
+        <div class="top-actions">
+          <a class="mini-btn" href="/index.html" type="button">Dashboard</a>
+          <a class="mini-btn accent" href="/index.html" type="button">Back</a>
+        </div>
+      </header>
+
+      <section class="concert-page active" id="concertPage" aria-live="polite">
+        <div class="concert-header">
+          <div>
+            <p class="eyebrow">Live event</p>
+            <h2>Digital Live Concert Console</h2>
+          </div>
+          <a class="mini-btn accent back-btn" href="/index.html" type="button">Back to dashboard</a>
+        </div>
+
+        <div class="concert-grid">
+          <div class="concert-panel">
+            <div class="panel-header compact">
+              <span>Event Setup</span>
+              <button class="chip online" type="button">ONLINE</button>
+            </div>
+
+            <div class="field-grid">
+              <label class="field">
+                <span>Venue profile</span>
+                <select>
+                  <option>Stadium</option>
+                  <option>Arena</option>
+                  <option>Festival Ground</option>
+                  <option>Club</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Signal path</span>
+                <select>
+                  <option>Digital Dante</option>
+                  <option>Analog Hybrid</option>
+                  <option>Wireless Mesh</option>
+                  <option>Backup Route</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Stage mode</span>
+                <select>
+                  <option>Front of House</option>
+                  <option>Monitor</option>
+                  <option>Broadcast</option>
+                  <option>Multitrack</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Output format</span>
+                <select>
+                  <option>Stereo LR</option>
+                  <option>LCR + Sub</option>
+                  <option>5.1 Surround</option>
+                  <option>Dolby Atmos</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Delay profile</span>
+                <select>
+                  <option>Fast Stage</option>
+                  <option>Balanced Arena</option>
+                  <option>Extended Delay</option>
+                  <option>Custom Map</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Network mode</span>
+                <select>
+                  <option>Primary Ethernet</option>
+                  <option>Dual Link</option>
+                  <option>Failover Wi‑Fi</option>
+                  <option>Manual Route</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="concert-panel">
+            <div class="panel-header compact">
+              <span>Performance</span>
+              <button class="chip" type="button">SCENE</button>
+            </div>
+
+            <div class="settings-stack">
+              <div class="mini-stat wide">
+                <span class="label">Current scene</span>
+                <strong>Main Show</strong>
+              </div>
+
+              <label class="field">
+                <span>Preset scene</span>
+                <select>
+                  <option>Main Show</option>
+                  <option>Soundcheck</option>
+                  <option>Opening Act</option>
+                  <option>Encore</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Channel grouping</span>
+                <select>
+                  <option>Full Band</option>
+                  <option>Vocals Focus</option>
+                  <option>DJ Setup</option>
+                  <option>Speech + Music</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Monitoring desk</span>
+                <select>
+                  <option>Master Desk</option>
+                  <option>Monitor A</option>
+                  <option>Monitor B</option>
+                  <option>Remote Mix</option>
+                </select>
+              </label>
+
+              <div class="toggle-row">
+                <span>Auto-save session</span>
+                <button class="toggle-btn active" type="button">ON</button>
+              </div>
+
+              <div class="toggle-row">
+                <span>Remote control</span>
+                <button class="toggle-btn" type="button">OFF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="concert-actions">
+          <button class="mini-btn" type="button">Save profile</button>
+          <button class="mini-btn accent" type="button">Apply live settings</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
