@@ -1,14 +1,14 @@
 :root {
-  --android-bg: #05070c;
-  --android-bg-2: #0d1623;
-  --surface: rgba(17, 20, 27, 0.88);
-  --surface-strong: rgba(23, 29, 38, 0.98);
+  --android-bg: #04070b;
+  --android-bg-2: #0b1320;
+  --surface: rgba(15, 18, 25, 0.9);
+  --surface-strong: rgba(20, 26, 34, 0.98);
   --surface-soft: rgba(255, 255, 255, 0.04);
-  --panel: rgba(13, 17, 24, 0.9);
-  --panel-alt: rgba(20, 27, 36, 0.96);
+  --panel: rgba(11, 15, 22, 0.92);
+  --panel-alt: rgba(18, 24, 32, 0.98);
   --line: rgba(255, 255, 255, 0.08);
   --text: #edf5ff;
-  --text-soft: #a6b7ce;
+  --text-soft: #a5b7d0;
   --primary: #5ea7ff;
   --primary-strong: #8ec7ff;
   --primary-soft: rgba(94, 167, 255, 0.12);
@@ -16,8 +16,8 @@
   --success-soft: rgba(105, 240, 185, 0.12);
   --warning: #ffc76a;
   --danger: #ff6d8d;
-  --shadow: 0 36px 90px rgba(0, 0, 0, 0.7);
-  --radius-xl: 38px;
+  --shadow: 0 38px 100px rgba(0, 0, 0, 0.74);
+  --radius-xl: 40px;
   --radius-lg: 28px;
   --radius-md: 18px;
 }
@@ -33,8 +33,8 @@ body {
   min-height: 100%;
   font-family: "Inter", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(74, 125, 255, 0.26), transparent 22%),
-    radial-gradient(circle at bottom right, rgba(103, 238, 186, 0.12), transparent 24%),
+    radial-gradient(circle at top left, rgba(77, 129, 255, 0.22), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(70, 224, 180, 0.08), transparent 25%),
     linear-gradient(160deg, var(--android-bg), var(--android-bg-2));
   color: var(--text);
   overflow-x: hidden;
@@ -57,12 +57,12 @@ input {
   position: relative;
   width: min(1440px, 100%);
   min-height: 860px;
-  background: linear-gradient(180deg, rgba(10, 14, 21, 0.98), rgba(6, 10, 17, 0.98));
+  background: linear-gradient(180deg, rgba(7, 11, 18, 0.98), rgba(4, 7, 12, 0.98));
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 42px;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   overflow: hidden;
 }
 
@@ -71,7 +71,7 @@ input {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(255,255,255,0.016), rgba(255,255,255,0.006)),
+    linear-gradient(rgba(255,255,255,0.018), rgba(255,255,255,0.006)),
     repeating-linear-gradient(
       to bottom,
       rgba(255,255,255,0.014),
@@ -132,12 +132,12 @@ input {
   display: grid;
   place-items: center;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(94, 167, 255, 0.45), rgba(103, 238, 186, 0.2));
+  background: linear-gradient(135deg, rgba(94, 167, 255, 0.42), rgba(103, 238, 186, 0.16));
   border: 1px solid rgba(255,255,255,0.12);
   color: #fff;
   font-weight: 800;
   font-size: 1.2rem;
-  box-shadow: 0 18px 32px rgba(94, 167, 255, 0.2);
+  box-shadow: 0 18px 34px rgba(94, 167, 255, 0.18);
 }
 
 .brand-name {
@@ -213,7 +213,7 @@ input {
 }
 
 .panel {
-  background: linear-gradient(180deg, rgba(17, 22, 30, 0.94), rgba(11, 16, 23, 0.96));
+  background: linear-gradient(180deg, rgba(17, 22, 30, 0.94), rgba(10, 13, 19, 0.96));
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   padding: 22px 18px 18px;
@@ -343,7 +343,7 @@ input {
 
 .hero-card {
   position: relative;
-  background: linear-gradient(145deg, rgba(31, 35, 44, 0.98), rgba(16, 20, 30, 0.98));
+  background: linear-gradient(145deg, rgba(29, 33, 42, 0.98), rgba(14, 18, 27, 0.98));
   border: 1px solid var(--line);
   border-radius: 30px;
   padding: 24px 24px 18px;
@@ -361,7 +361,7 @@ input {
   inset: 0 auto auto 42%;
   width: 230px;
   height: 230px;
-  background: radial-gradient(circle, rgba(94,167,255,0.16), transparent 62%);
+  background: radial-gradient(circle, rgba(94,167,255,0.15), transparent 62%);
   pointer-events: none;
 }
 
@@ -469,7 +469,7 @@ input {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(150deg, rgba(8, 12, 18, 0.98), rgba(19, 25, 34, 1));
+  background: linear-gradient(150deg, rgba(8, 12, 18, 0.98), rgba(18, 23, 31, 1));
   box-shadow: inset 0 0 18px rgba(255,255,255,0.04);
   display: grid;
   place-items: center;
