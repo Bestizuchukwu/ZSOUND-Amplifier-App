@@ -6,7 +6,7 @@
     <title>ZSOUND | Amplifier</title>
     <meta
       name="description"
-      content="ZSOUND digital amplifier app with Dante connectivity and premium studio-grade interface."
+      content="ZSOUND digital amplifier app with premium studio-grade control icons and digital bypass routing."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,119 +54,251 @@
         <aside class="panel left-panel">
           <div class="panel-header">
             <span>Outputs</span>
-            <button class="chip">STUDIO</button>
+            <button class="chip online">STUDIO</button>
           </div>
 
           <div class="output-card active">
             <div class="output-row">
               <div>
-                <p class="label">Main L/R</p>
-                <h3>Balanced Output</h3>
+                <p class="label">Zone 01</p>
+                <h3>Main Left</h3>
               </div>
-              <div class="signal-badge">+4 dB</div>
+              <span class="signal-badge">LIVE</span>
             </div>
-
             <div class="meter-stack">
-              <div class="meter-line"><span style="--level: 76%"></span></div>
-              <div class="meter-line"><span style="--level: 68%"></span></div>
-              <div class="meter-line"><span style="--level: 58%"></span></div>
-              <div class="meter-line"><span style="--level: 81%"></span></div>
+              <div class="meter-line" style="--level: 82%"><span></span></div>
+              <div class="meter-line" style="--level: 68%"><span></span></div>
+              <div class="meter-line" style="--level: 56%"><span></span></div>
             </div>
           </div>
 
           <div class="output-card">
             <div class="output-row">
               <div>
-                <p class="label">Sub</p>
-                <h3>Low Frequency</h3>
+                <p class="label">Zone 02</p>
+                <h3>Main Right</h3>
               </div>
-              <div class="signal-badge alt">-2 dB</div>
+              <span class="signal-badge alt">MON</span>
             </div>
+            <div class="meter-stack">
+              <div class="meter-line" style="--level: 74%"><span></span></div>
+              <div class="meter-line" style="--level: 62%"><span></span></div>
+              <div class="meter-line" style="--level: 50%"><span></span></div>
+            </div>
+          </div>
 
+          <div class="output-card">
+            <div class="output-row">
+              <div>
+                <p class="label">Zone 03</p>
+                <h3>Subwoofer</h3>
+              </div>
+              <span class="signal-badge">SYNC</span>
+            </div>
             <div class="meter-stack small">
-              <div class="meter-line"><span style="--level: 48%"></span></div>
-              <div class="meter-line"><span style="--level: 56%"></span></div>
-              <div class="meter-line"><span style="--level: 44%"></span></div>
+              <div class="meter-line" style="--level: 58%"><span></span></div>
+              <div class="meter-line" style="--level: 49%"><span></span></div>
+              <div class="meter-line" style="--level: 45%"><span></span></div>
             </div>
           </div>
 
           <div class="panel-footer">
-            <div>
-              <p class="label small">Temp</p>
-              <strong>32°C</strong>
-            </div>
-            <div>
-              <p class="label small">Protection</p>
-              <strong>Stable</strong>
-            </div>
+            <span>Digital mix</span>
+            <span>4.2.1</span>
           </div>
         </aside>
 
         <section class="main-panel">
           <div class="hero-card">
             <div class="hero-copy">
-              <p class="eyebrow">Power Rail</p>
-              <h1>Digital Amplifier</h1>
+              <p class="eyebrow">Signal Flow</p>
+              <h1>ZSOUND</h1>
               <p class="subtext">
-                Precision output with networked routing, adaptive limiting, and
-                studio-grade control.
+                Premium digital amplifier control with smart bypass routing, output balancing,
+                and upgrade-ready processing.
               </p>
             </div>
-
             <div class="wave-visual" aria-hidden="true">
-              <div class="wave wave-1"></div>
+              <div class="wave"></div>
               <div class="wave wave-2"></div>
             </div>
           </div>
 
-          <div class="controls-grid">
-            <div class="knob-panel">
-              <div class="knob-ring">
-                <div class="knob-core">
-                  <span id="volumeValue">72</span>
+          <section class="icon-panel" aria-label="audio control icons">
+            <div class="panel-header">
+              <span>Graphic Controls</span>
+              <button class="chip">UPGRADE</button>
+            </div>
+
+            <div class="icon-grid">
+              <div class="icon-card active">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <rect x="8" y="16" width="48" height="32" rx="8" stroke="currentColor" fill="none" stroke-width="3"/>
+                    <path d="M22 32h20M32 24l10 8-10 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 48h36" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>By-Pass</strong>
+                  <small>Normal digital bypass</small>
                 </div>
               </div>
 
-              <div class="knob-labels">
-                <span>Mute</span>
-                <span>Volume</span>
-                <span>Limit</span>
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <path d="M18 22v20M24 18v28M30 12v36M36 18v28M42 22v20M48 28v8" stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M8 32h8M48 32h8" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Gain</strong>
+                  <small>Signal control</small>
+                </div>
               </div>
 
-              <input
-                id="volumeControl"
-                type="range"
-                min="0"
-                max="100"
-                value="72"
-                aria-label="Volume"
-              />
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <path d="M10 42c5-16 10-22 16-22s8 8 14 8 10-6 14-18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 52h44" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>EQ</strong>
+                  <small>Frequency tune</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <path d="M12 42V22h8v20M26 42V16h8v26M40 42V28h8v14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 48h48" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Limit</strong>
+                  <small>Protection</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <path d="M16 42c4-10 8-16 16-16 7 0 10 6 16 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M26 18v14M38 18v14M20 50h24" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Delay</strong>
+                  <small>Time tuning</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <circle cx="22" cy="32" r="12" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <path d="M34 22h16v20H34" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                    <path d="M26 32h14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Output</strong>
+                  <small>Speaker routing</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="46" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="20" cy="44" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="46" cy="44" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <path d="M28 20h10M20 28v8M44 28v8M28 44h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Route</strong>
+                  <small>Digital matrix</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <rect x="14" y="18" width="36" height="28" rx="6" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <path d="M24 26h16M24 32h16M24 38h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M50 18v28" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Upgrade</strong>
+                  <small>Expandable module</small>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="controls-grid">
+            <div class="knob-panel">
+              <div class="knob-ring" aria-label="output volume knob">
+                <div class="knob-core"><span id="volumeValue">72</span></div>
+              </div>
+              <div class="knob-labels">
+                <span>Min</span>
+                <span>Level</span>
+                <span>Max</span>
+              </div>
+              <input id="volumeControl" type="range" min="0" max="100" value="72" />
             </div>
 
             <div class="mix-panel">
               <div class="mini-stat">
-                <span class="label">Input Gain</span>
-                <strong id="gainValue">+6.5 dB</strong>
-              </div>
-
-              <div class="mini-stat">
-                <span class="label">Latency</span>
-                <strong>0.7 ms</strong>
-              </div>
-
-              <div class="mini-stat">
-                <span class="label">Network</span>
-                <strong>Dante OK</strong>
+                <span class="label">Gain</span>
+                <strong id="gainValue">+6.0 dB</strong>
               </div>
 
               <div class="slider-block">
-                <label for="gainSlider">Input Trim</label>
-                <input id="gainSlider" type="range" min="-12" max="18" value="6" />
+                <label for="gainSlider">Main gain</label>
+                <input id="gainSlider" type="range" min="-10" max="10" step="0.1" value="6" />
               </div>
 
               <div class="slider-block">
-                <label for="bassSlider">Low Shelf</label>
-                <input id="bassSlider" type="range" min="-10" max="12" value="5" />
+                <label for="bassSlider">Bass</label>
+                <input id="bassSlider" type="range" min="-10" max="12" step="1" value="6" />
+              </div>
+
+              <div class="network-card">
+                <div class="network-row">
+                  <span>Source</span>
+                  <strong>Dante A</strong>
+                </div>
+                <div class="network-row">
+                  <span>Latency</span>
+                  <strong>1.8 ms</strong>
+                </div>
+                <div class="network-row">
+                  <span>Output</span>
+                  <strong>Bridge Ready</strong>
+                </div>
+              </div>
+
+              <div class="preset-list">
+                <button class="preset active">Studio</button>
+                <button class="preset">Live</button>
+                <button class="preset">Boost</button>
+              </div>
+
+              <div class="power-box">
+                <div>
+                  <span class="label">Mode</span>
+                  <strong>Standby Ready</strong>
+                </div>
+                <button class="power-btn">Power</button>
               </div>
             </div>
           </div>
@@ -174,47 +306,61 @@
 
         <aside class="panel right-panel">
           <div class="panel-header">
-            <span>Dante</span>
-            <button class="chip online">Online</button>
+            <span>System</span>
+            <button class="chip">STATUS</button>
           </div>
 
-          <div class="network-card">
-            <div class="network-row">
-              <span>Primary</span>
-              <strong>192.168.10.24</strong>
+          <div class="output-card active">
+            <div class="output-row">
+              <div>
+                <p class="label">Input</p>
+                <h3>Line In</h3>
+              </div>
+              <span class="signal-badge">73%</span>
             </div>
-            <div class="network-row">
-              <span>Backup</span>
-              <strong>192.168.10.25</strong>
-            </div>
-            <div class="network-row">
-              <span>Clock</span>
-              <strong>Internal</strong>
-            </div>
-            <div class="network-row">
-              <span>Latency</span>
-              <strong>1.0 ms</strong>
+            <div class="meter-stack small">
+              <div class="meter-line" style="--level: 73%"><span></span></div>
+              <div class="meter-line" style="--level: 60%"><span></span></div>
+              <div class="meter-line" style="--level: 48%"><span></span></div>
             </div>
           </div>
 
-          <div class="preset-list">
-            <button class="preset active">Live Concert</button>
-            <button class="preset">Conference</button>
-            <button class="preset">Studio Flat</button>
-            <button class="preset">Theater</button>
+          <div class="output-card">
+            <div class="output-row">
+              <div>
+                <p class="label">Bypass</p>
+                <h3>Normal path</h3>
+              </div>
+              <span class="signal-badge alt">SAFE</span>
+            </div>
+            <div class="meter-stack small">
+              <div class="meter-line" style="--level: 44%"><span></span></div>
+              <div class="meter-line" style="--level: 36%"><span></span></div>
+              <div class="meter-line" style="--level: 32%"><span></span></div>
+            </div>
+          </div>
+
+          <div class="mini-stat">
+            <span class="label">Firmware</span>
+            <strong>v6.8.2</strong>
+          </div>
+
+          <div class="mini-stat">
+            <span class="label">Modules</span>
+            <strong>08 / 12</strong>
           </div>
 
           <div class="power-box">
             <div>
-              <p class="label">Power</p>
-              <strong>1,920 W</strong>
+              <span class="label">Upgrade</span>
+              <strong>Expand path</strong>
             </div>
-            <button class="power-btn">Standby</button>
+            <button class="power-btn">Add</button>
           </div>
         </aside>
       </main>
     </div>
 
-    <script type="module" src="/script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
