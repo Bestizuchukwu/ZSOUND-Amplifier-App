@@ -45,16 +45,17 @@
         </div>
 
         <div class="top-actions">
-          <button class="mini-btn">Preset</button>
-          <button class="mini-btn accent">Boost</button>
+          <button class="mini-btn" type="button">Preset</button>
+          <button class="mini-btn accent" type="button">Boost</button>
+          <button class="mini-btn live-concert-btn" type="button">Live Concert</button>
         </div>
       </header>
 
-      <main class="dashboard">
+      <main class="dashboard" id="mainDashboard">
         <aside class="panel left-panel">
           <div class="panel-header">
             <span>Outputs</span>
-            <button class="chip online">STUDIO</button>
+            <button class="chip online" type="button">STUDIO</button>
           </div>
 
           <div class="output-card active">
@@ -127,7 +128,7 @@
           <section class="icon-panel" aria-label="audio control icons">
             <div class="panel-header">
               <span>Graphic Controls</span>
-              <button class="chip">UPGRADE</button>
+              <button class="chip" type="button">UPGRADE</button>
             </div>
 
             <div class="icon-grid">
@@ -288,9 +289,9 @@
               </div>
 
               <div class="preset-list">
-                <button class="preset active">Studio</button>
-                <button class="preset">Live</button>
-                <button class="preset">Boost</button>
+                <button class="preset active" type="button">Studio</button>
+                <button class="preset live-preset" type="button">Live</button>
+                <button class="preset" type="button">Boost</button>
               </div>
 
               <div class="power-box">
@@ -298,7 +299,7 @@
                   <span class="label">Mode</span>
                   <strong>Standby Ready</strong>
                 </div>
-                <button class="power-btn">Power</button>
+                <button class="power-btn" type="button">Power</button>
               </div>
             </div>
           </div>
@@ -307,7 +308,7 @@
         <aside class="panel right-panel">
           <div class="panel-header">
             <span>System</span>
-            <button class="chip">STATUS</button>
+            <button class="chip" type="button">STATUS</button>
           </div>
 
           <div class="output-card active">
@@ -355,10 +356,150 @@
               <span class="label">Upgrade</span>
               <strong>Expand path</strong>
             </div>
-            <button class="power-btn">Add</button>
+            <button class="power-btn" type="button">Add</button>
           </div>
         </aside>
       </main>
+
+      <section class="concert-page" id="concertPage" aria-live="polite">
+        <div class="concert-header">
+          <div>
+            <p class="eyebrow">Live event</p>
+            <h2>Digital Live Concert Console</h2>
+          </div>
+          <button class="mini-btn accent back-btn" type="button">Back to dashboard</button>
+        </div>
+
+        <div class="concert-grid">
+          <div class="concert-panel">
+            <div class="panel-header compact">
+              <span>Event Setup</span>
+              <button class="chip online" type="button">ONLINE</button>
+            </div>
+
+            <div class="field-grid">
+              <label class="field">
+                <span>Venue profile</span>
+                <select>
+                  <option>Stadium</option>
+                  <option>Arena</option>
+                  <option>Festival Ground</option>
+                  <option>Club</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Signal path</span>
+                <select>
+                  <option>Digital Dante</option>
+                  <option>Analog Hybrid</option>
+                  <option>Wireless Mesh</option>
+                  <option>Backup Route</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Stage mode</span>
+                <select>
+                  <option>Front of House</option>
+                  <option>Monitor</option>
+                  <option>Broadcast</option>
+                  <option>Multitrack</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Output format</span>
+                <select>
+                  <option>Stereo LR</option>
+                  <option>LCR + Sub</option>
+                  <option>5.1 Surround</option>
+                  <option>Dolby Atmos</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Delay profile</span>
+                <select>
+                  <option>Fast Stage</option>
+                  <option>Balanced Arena</option>
+                  <option>Extended Delay</option>
+                  <option>Custom Map</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Network mode</span>
+                <select>
+                  <option>Primary Ethernet</option>
+                  <option>Dual Link</option>
+                  <option>Failover Wi‑Fi</option>
+                  <option>Manual Route</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="concert-panel">
+            <div class="panel-header compact">
+              <span>Performance</span>
+              <button class="chip" type="button">SCENE</button>
+            </div>
+
+            <div class="settings-stack">
+              <div class="mini-stat wide">
+                <span class="label">Current scene</span>
+                <strong>Main Show</strong>
+              </div>
+
+              <label class="field">
+                <span>Preset scene</span>
+                <select>
+                  <option>Main Show</option>
+                  <option>Soundcheck</option>
+                  <option>Opening Act</option>
+                  <option>Encore</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Channel grouping</span>
+                <select>
+                  <option>Full Band</option>
+                  <option>Vocals Focus</option>
+                  <option>DJ Setup</option>
+                  <option>Speech + Music</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Monitoring desk</span>
+                <select>
+                  <option>Master Desk</option>
+                  <option>Monitor A</option>
+                  <option>Monitor B</option>
+                  <option>Remote Mix</option>
+                </select>
+              </label>
+
+              <div class="toggle-row">
+                <span>Auto-save session</span>
+                <button class="toggle-btn active" type="button">ON</button>
+              </div>
+
+              <div class="toggle-row">
+                <span>Remote control</span>
+                <button class="toggle-btn" type="button">OFF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="concert-actions">
+          <button class="mini-btn" type="button">Save profile</button>
+          <button class="mini-btn accent" type="button">Apply live settings</button>
+        </div>
+      </section>
     </div>
 
     <script src="/script.js"></script>
