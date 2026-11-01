@@ -1,709 +1,507 @@
-:root {
-  --android-bg: #03070c;
-  --android-bg-2: #0b1220;
-  --surface: rgba(17, 20, 28, 0.9);
-  --surface-strong: rgba(23, 29, 38, 0.98);
-  --surface-soft: rgba(255, 255, 255, 0.04);
-  --panel: rgba(12, 15, 22, 0.92);
-  --panel-alt: rgba(19, 25, 34, 0.98);
-  --line: rgba(255, 255, 255, 0.08);
-  --text: #edf5ff;
-  --text-soft: #a7bbd3;
-  --primary: #5ea7ff;
-  --primary-strong: #8dc9ff;
-  --primary-soft: rgba(94, 167, 255, 0.12);
-  --success: #69f0b9;
-  --success-soft: rgba(105, 240, 185, 0.12);
-  --warning: #ffc76a;
-  --danger: #ff7089;
-  --shadow: 0 42px 120px rgba(0, 0, 0, 0.8);
-  --radius-xl: 42px;
-  --radius-lg: 30px;
-  --radius-md: 18px;
-}
-
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
-
-html,
-body {
-  margin: 0;
-  min-height: 100%;
-  font-family: "Inter", sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(94, 167, 255, 0.28), transparent 20%),
-    radial-gradient(circle at bottom right, rgba(90, 225, 189, 0.08), transparent 24%),
-    linear-gradient(160deg, var(--android-bg), var(--android-bg-2));
-  color: var(--text);
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-}
-
-button,
-input {
-  font: inherit;
-}
-
-.app-shell {
-  position: relative;
-  width: min(1440px, 100%);
-  min-height: 860px;
-  background: linear-gradient(180deg, rgba(8, 11, 18, 0.98), rgba(4, 7, 12, 0.98));
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 42px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  overflow: hidden;
-}
-
-.app-shell::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(255,255,255,0.016), rgba(255,255,255,0.006)),
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.014),
-      rgba(255,255,255,0.014) 1px,
-      transparent 1px,
-      transparent 7px
-    );
-  pointer-events: none;
-}
-
-.topbar,
-.dashboard,
-.phone-status {
-  position: relative;
-  z-index: 1;
-}
-
-.phone-status {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 30px 10px;
-  color: var(--text);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
-
-.phone-status .time {
-  letter-spacing: 0.08em;
-}
-
-.phone-status .status-icons {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--text-soft);
-  font-size: 0.68rem;
-}
-
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 28px 18px;
-  border-bottom: 1px solid var(--line);
-}
-
-.brand-wrap {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.brand-mark {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(94, 167, 255, 0.42), rgba(103, 238, 186, 0.18));
-  border: 1px solid rgba(255,255,255,0.12);
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.2rem;
-  box-shadow: 0 18px 34px rgba(94, 167, 255, 0.18);
-}
-
-.brand-name {
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
-}
-
-.brand-subtitle {
-  color: var(--text-soft);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.session-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(94, 167, 255, 0.08);
-  border: 1px solid rgba(94, 167, 255, 0.14);
-  color: var(--primary-strong);
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.status-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--success);
-  box-shadow: 0 0 18px rgba(105, 240, 185, 0.7);
-}
-
-.top-actions {
-  display: flex;
-  gap: 12px;
-}
-
-.mini-btn {
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text);
-  border-radius: 14px;
-  padding: 10px 16px;
-  cursor: pointer;
-  transition: 0.2s ease;
-  font-weight: 600;
-}
-
-.mini-btn.accent {
-  background: linear-gradient(135deg, rgba(94, 167, 255, 0.22), rgba(105, 240, 185, 0.1));
-  border-color: rgba(94, 167, 255, 0.18);
-  color: var(--text);
-}
-
-.mini-btn:hover,
-.preset:hover,
-.power-btn:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
-}
-
-.dashboard {
-  display: grid;
-  grid-template-columns: 0.92fr 1.8fr 0.92fr;
-  gap: 22px;
-  padding: 24px 22px 26px;
-}
-
-.panel {
-  background: linear-gradient(180deg, rgba(18, 23, 31, 0.94), rgba(11, 14, 20, 0.96));
-  border: 1px solid var(--line);
-  border-radius: var(--radius-xl);
-  padding: 22px 18px 18px;
-  display: flex;
-  flex-direction: column;
-  min-height: 720px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
-}
-
-.panel-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 18px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-}
-
-.chip {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--line);
-  color: var(--text);
-  border-radius: 999px;
-  padding: 7px 12px;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-}
-
-.chip.online {
-  background: rgba(105, 240, 185, 0.08);
-  border-color: rgba(105, 240, 185, 0.14);
-  color: #d6fce9;
-}
-
-.output-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--radius-lg);
-  padding: 18px 16px;
-  margin-bottom: 16px;
-  transition: 0.2s ease;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
-}
-
-.output-card.active {
-  background: linear-gradient(180deg, rgba(94, 167, 255, 0.08), rgba(255,255,255,0.02));
-  border-color: rgba(94, 167, 255, 0.18);
-}
-
-.output-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.output-row h3 {
-  margin: 4px 0 0;
-  font-size: 1.08rem;
-}
-
-.label {
-  margin: 0;
-  color: var(--text-soft);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.label.small {
-  font-size: 0.64rem;
-}
-
-.signal-badge {
-  font-size: 0.72rem;
-  padding: 8px 10px;
-  border-radius: 999px;
-  background: rgba(105, 240, 185, 0.08);
-  border: 1px solid rgba(105, 240, 185, 0.16);
-  color: #d9ffe8;
-  font-weight: 700;
-}
-
-.signal-badge.alt {
-  background: rgba(255, 199, 106, 0.08);
-  border-color: rgba(255, 199, 106, 0.18);
-  color: #ffe7b6;
-}
-
-.meter-stack {
-  display: grid;
-  gap: 10px;
-}
-
-.meter-line {
-  position: relative;
-  width: 100%;
-  height: 11px;
-  border-radius: 999px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.06);
-}
-
-.meter-line span {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: var(--level);
-  border-radius: inherit;
-  background: linear-gradient(90deg, #69f0b9, #5ea7ff, #ffc76a);
-  box-shadow: 0 0 12px rgba(94, 167, 255, 0.24);
-}
-
-.meter-stack.small .meter-line {
-  height: 9px;
-}
-
-.main-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.hero-card {
-  position: relative;
-  background: linear-gradient(145deg, rgba(31, 35, 46, 0.98), rgba(15, 19, 28, 0.98));
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  padding: 24px 24px 18px;
-  min-height: 220px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  align-items: center;
-  overflow: hidden;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 16px 30px rgba(10, 16, 24, 0.35);
-}
-
-.hero-card::after {
-  content: "";
-  position: absolute;
-  inset: 0 auto auto 42%;
-  width: 230px;
-  height: 230px;
-  background: radial-gradient(circle, rgba(94,167,255,0.16), transparent 62%);
-  pointer-events: none;
-}
-
-.eyebrow {
-  margin: 0 0 8px;
-  color: var(--primary-strong);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 800;
-}
-
-.hero-copy h1 {
-  margin: 0;
-  font-size: clamp(2.1rem, 2.6vw, 3.7rem);
-  line-height: 1;
-  letter-spacing: -0.06em;
-}
-
-.subtext {
-  margin-top: 12px;
-  max-width: 520px;
-  color: var(--text-soft);
-  font-size: 0.96rem;
-  line-height: 1.7;
-}
-
-.wave-visual {
-  position: relative;
-  height: 170px;
-  border-radius: 22px;
-  background: linear-gradient(150deg, rgba(94, 167, 255, 0.09), rgba(105, 240, 185, 0.04));
-  border: 1px solid rgba(255,255,255,0.06);
-  overflow: hidden;
-}
-
-.wave {
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  width: 260px;
-  height: 120px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  border: 2px solid rgba(94, 167, 255, 0.28);
-  border-color: rgba(94,167,255,0.25) transparent transparent transparent;
-  animation: pulse 4s infinite ease-in-out;
-}
-
-.wave-2 {
-  bottom: 34px;
-  width: 220px;
-  height: 100px;
-  border-color: rgba(105,240,185,0.24) transparent transparent transparent;
-  animation-delay: 0.8s;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: translateX(-50%) scale(1);
-    opacity: 0.78;
-  }
-  50% {
-    transform: translateX(-50%) scale(1.06);
-    opacity: 1;
-  }
-}
-
-.controls-grid {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 20px;
-}
-
-.knob-panel,
-.mix-panel {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-xl);
-  padding: 22px 18px;
-}
-
-.knob-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.knob-ring {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at center, rgba(255,255,255,0.22) 0, rgba(255,255,255,0.04) 42%, rgba(0,0,0,0) 72%),
-    conic-gradient(from 220deg, #69f0b9, #5ea7ff, rgba(255,255,255,0.2), #69f0b9);
-  border: 1px solid rgba(255,255,255,0.05);
-  display: grid;
-  place-items: center;
-  box-shadow: inset 0 0 40px rgba(255,255,255,0.05), 0 18px 28px rgba(0, 0, 0, 0.25);
-}
-
-.knob-core {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: linear-gradient(150deg, rgba(8, 12, 18, 0.98), rgba(18, 23, 31, 1));
-  box-shadow: inset 0 0 18px rgba(255,255,255,0.04);
-  display: grid;
-  place-items: center;
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--text);
-}
-
-.knob-core span {
-  transform: translateY(-3px);
-}
-
-.knob-labels {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  color: var(--text-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.7rem;
-  font-weight: 700;
-}
-
-input[type="range"] {
-  appearance: none;
-  width: 100%;
-  height: 5px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 999px;
-  outline: none;
-  cursor: pointer;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ffffff, #5ea7ff);
-  box-shadow: 0 0 0 5px rgba(94, 167, 255, 0.12);
-  border: none;
-}
-
-.mix-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.mini-stat {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.mini-stat strong {
-  font-size: 1.02rem;
-}
-
-.slider-block {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 4px;
-}
-
-.slider-block label {
-  color: var(--text-soft);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.network-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 12px 10px;
-}
-
-.network-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--line);
-  padding: 12px 6px;
-  color: var(--text-soft);
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.network-row:last-child {
-  border-bottom: none;
-}
-
-.network-row strong {
-  color: var(--text);
-  font-size: 0.82rem;
-}
-
-.preset-list {
-  display: grid;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.preset {
-  text-align: left;
-  background: rgba(255,255,255,0.03);
-  color: var(--text);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 14px 12px;
-  cursor: pointer;
-  transition: 0.2s ease;
-  font-weight: 700;
-}
-
-.preset.active {
-  background: linear-gradient(135deg, rgba(94, 167, 255, 0.12), rgba(105, 240, 185, 0.05));
-  border-color: rgba(94, 167, 255, 0.16);
-  color: var(--primary-strong);
-}
-
-.power-box {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(135deg, rgba(94, 167, 255, 0.08), rgba(105, 240, 185, 0.05));
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 16px;
-}
-
-.power-box strong {
-  display: block;
-  margin-top: 6px;
-}
-
-.power-btn {
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,0.04);
-  color: var(--text);
-  border-radius: 12px;
-  padding: 10px 14px;
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.panel-footer {
-  margin-top: auto;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-  color: var(--text);
-}
-
-.bg-glow {
-  position: fixed;
-  filter: blur(90px);
-  opacity: 0.34;
-  pointer-events: none;
-}
-
-.glow-1 {
-  width: 320px;
-  height: 320px;
-  background: rgba(94, 167, 255, 0.17);
-  left: 3%;
-  top: 8%;
-}
-
-.glow-2 {
-  width: 360px;
-  height: 360px;
-  background: rgba(105, 240, 185, 0.12);
-  right: 7%;
-  bottom: 8%;
-}
-
-.glow-3 {
-  width: 280px;
-  height: 280px;
-  background: rgba(124, 133, 255, 0.1);
-  left: 32%;
-  top: 52%;
-}
-
-@media (max-width: 1100px) {
-  .dashboard {
-    grid-template-columns: 1fr;
-  }
-
-  .panel {
-    min-height: auto;
-  }
-
-  .hero-card {
-    grid-template-columns: 1fr;
-  }
-
-  .controls-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 700px) {
-  body {
-    padding: 16px;
-  }
-
-  .topbar {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .top-actions {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .brand-name {
-    letter-spacing: 0.08em;
-  }
-
-  .app-shell {
-    min-height: auto;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZSOUND | Amplifier</title>
+    <meta
+      name="description"
+      content="ZSOUND digital amplifier app with premium studio-grade control icons and digital bypass routing."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-3"></div>
+
+    <div class="app-shell">
+      <div class="phone-status" aria-label="phone status">
+        <span class="time">9:41</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>82%</span>
+        </div>
+      </div>
+
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">Z</div>
+          <div class="brand-copy">
+            <div class="brand-name">ZSOUND</div>
+            <div class="brand-subtitle">Amplifier Control</div>
+          </div>
+        </div>
+
+        <div class="session-chip">
+          <span class="status-dot"></span>
+          Dante Live
+        </div>
+
+        <div class="top-actions">
+          <button class="mini-btn" type="button">Preset</button>
+          <button class="mini-btn accent" type="button">Boost</button>
+          <button class="mini-btn live-concert-btn" type="button">Live Concert</button>
+        </div>
+      </header>
+
+      <main class="dashboard" id="mainDashboard">
+        <aside class="panel left-panel">
+          <div class="panel-header">
+            <span>Outputs</span>
+            <button class="chip online" type="button">STUDIO</button>
+          </div>
+
+          <div class="output-card active">
+            <div class="output-row">
+              <div>
+                <p class="label">Zone 01</p>
+                <h3>Main Left</h3>
+              </div>
+              <span class="signal-badge">LIVE</span>
+            </div>
+            <div class="meter-stack">
+              <div class="meter-line" style="--level: 82%"><span></span></div>
+              <div class="meter-line" style="--level: 68%"><span></span></div>
+              <div class="meter-line" style="--level: 56%"><span></span></div>
+            </div>
+          </div>
+
+          <div class="output-card">
+            <div class="output-row">
+              <div>
+                <p class="label">Zone 02</p>
+                <h3>Main Right</h3>
+              </div>
+              <span class="signal-badge alt">MON</span>
+            </div>
+            <div class="meter-stack">
+              <div class="meter-line" style="--level: 74%"><span></span></div>
+              <div class="meter-line" style="--level: 62%"><span></span></div>
+              <div class="meter-line" style="--level: 50%"><span></span></div>
+            </div>
+          </div>
+
+          <div class="output-card">
+            <div class="output-row">
+              <div>
+                <p class="label">Zone 03</p>
+                <h3>Subwoofer</h3>
+              </div>
+              <span class="signal-badge">SYNC</span>
+            </div>
+            <div class="meter-stack small">
+              <div class="meter-line" style="--level: 58%"><span></span></div>
+              <div class="meter-line" style="--level: 49%"><span></span></div>
+              <div class="meter-line" style="--level: 45%"><span></span></div>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <span>Digital mix</span>
+            <span>4.2.1</span>
+          </div>
+        </aside>
+
+        <section class="main-panel">
+          <div class="hero-card">
+            <div class="hero-copy">
+              <p class="eyebrow">Signal Flow</p>
+              <h1>ZSOUND</h1>
+              <p class="subtext">
+                Premium digital amplifier control with smart bypass routing, output balancing,
+                and upgrade-ready processing.
+              </p>
+            </div>
+            <div class="wave-visual" aria-hidden="true">
+              <div class="wave"></div>
+              <div class="wave wave-2"></div>
+            </div>
+          </div>
+
+          <section class="icon-panel" aria-label="audio control icons">
+            <div class="panel-header">
+              <span>Graphic Controls</span>
+              <button class="chip" type="button">UPGRADE</button>
+            </div>
+
+            <div class="icon-grid">
+              <div class="icon-card active">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <rect x="8" y="16" width="48" height="32" rx="8" stroke="currentColor" fill="none" stroke-width="3"/>
+                    <path d="M22 32h20M32 24l10 8-10 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 48h36" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>By-Pass</strong>
+                  <small>Normal digital bypass</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <path d="M18 22v20M24 18v28M30 12v36M36 18v28M42 22v20M48 28v8" stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M8 32h8M48 32h8" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Gain</strong>
+                  <small>Signal control</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <path d="M10 42c5-16 10-22 16-22s8 8 14 8 10-6 14-18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 52h44" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>EQ</strong>
+                  <small>Frequency tune</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <path d="M12 42V22h8v20M26 42V16h8v26M40 42V28h8v14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 48h48" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Limit</strong>
+                  <small>Protection</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <path d="M16 42c4-10 8-16 16-16 7 0 10 6 16 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M26 18v14M38 18v14M20 50h24" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Delay</strong>
+                  <small>Time tuning</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <circle cx="22" cy="32" r="12" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <path d="M34 22h16v20H34" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                    <path d="M26 32h14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Output</strong>
+                  <small>Speaker routing</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="46" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="20" cy="44" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="46" cy="44" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <path d="M28 20h10M20 28v8M44 28v8M28 44h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Route</strong>
+                  <small>Digital matrix</small>
+                </div>
+              </div>
+
+              <div class="icon-card">
+                <div class="icon-art" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" class="mini-icon">
+                    <rect x="14" y="18" width="36" height="28" rx="6" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <path d="M24 26h16M24 32h16M24 38h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M50 18v28" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+                  </svg>
+                </div>
+                <div class="icon-meta">
+                  <strong>Upgrade</strong>
+                  <small>Expandable module</small>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="controls-grid">
+            <div class="knob-panel">
+              <div class="knob-ring" aria-label="output volume knob">
+                <div class="knob-core"><span id="volumeValue">72</span></div>
+              </div>
+              <div class="knob-labels">
+                <span>Min</span>
+                <span>Level</span>
+                <span>Max</span>
+              </div>
+              <input id="volumeControl" type="range" min="0" max="100" value="72" />
+            </div>
+
+            <div class="mix-panel">
+              <div class="mini-stat">
+                <span class="label">Gain</span>
+                <strong id="gainValue">+6.0 dB</strong>
+              </div>
+
+              <div class="slider-block">
+                <label for="gainSlider">Main gain</label>
+                <input id="gainSlider" type="range" min="-10" max="10" step="0.1" value="6" />
+              </div>
+
+              <div class="slider-block">
+                <label for="bassSlider">Bass</label>
+                <input id="bassSlider" type="range" min="-10" max="12" step="1" value="6" />
+              </div>
+
+              <div class="network-card">
+                <div class="network-row">
+                  <span>Source</span>
+                  <strong>Dante A</strong>
+                </div>
+                <div class="network-row">
+                  <span>Latency</span>
+                  <strong>1.8 ms</strong>
+                </div>
+                <div class="network-row">
+                  <span>Output</span>
+                  <strong>Bridge Ready</strong>
+                </div>
+              </div>
+
+              <div class="preset-list">
+                <button class="preset active" type="button">Studio</button>
+                <button class="preset live-preset" type="button">Live</button>
+                <button class="preset" type="button">Boost</button>
+              </div>
+
+              <div class="power-box">
+                <div>
+                  <span class="label">Mode</span>
+                  <strong>Standby Ready</strong>
+                </div>
+                <button class="power-btn" type="button">Power</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel right-panel">
+          <div class="panel-header">
+            <span>System</span>
+            <button class="chip" type="button">STATUS</button>
+          </div>
+
+          <div class="output-card active">
+            <div class="output-row">
+              <div>
+                <p class="label">Input</p>
+                <h3>Line In</h3>
+              </div>
+              <span class="signal-badge">73%</span>
+            </div>
+            <div class="meter-stack small">
+              <div class="meter-line" style="--level: 73%"><span></span></div>
+              <div class="meter-line" style="--level: 60%"><span></span></div>
+              <div class="meter-line" style="--level: 48%"><span></span></div>
+            </div>
+          </div>
+
+          <div class="output-card">
+            <div class="output-row">
+              <div>
+                <p class="label">Bypass</p>
+                <h3>Normal path</h3>
+              </div>
+              <span class="signal-badge alt">SAFE</span>
+            </div>
+            <div class="meter-stack small">
+              <div class="meter-line" style="--level: 44%"><span></span></div>
+              <div class="meter-line" style="--level: 36%"><span></span></div>
+              <div class="meter-line" style="--level: 32%"><span></span></div>
+            </div>
+          </div>
+
+          <div class="mini-stat">
+            <span class="label">Firmware</span>
+            <strong>v6.8.2</strong>
+          </div>
+
+          <div class="mini-stat">
+            <span class="label">Modules</span>
+            <strong>08 / 12</strong>
+          </div>
+
+          <div class="power-box">
+            <div>
+              <span class="label">Upgrade</span>
+              <strong>Expand path</strong>
+            </div>
+            <button class="power-btn" type="button">Add</button>
+          </div>
+        </aside>
+      </main>
+
+      <section class="concert-page" id="concertPage" aria-live="polite">
+        <div class="concert-header">
+          <div>
+            <p class="eyebrow">Live event</p>
+            <h2>Digital Live Concert Console</h2>
+          </div>
+          <button class="mini-btn accent back-btn" type="button">Back to dashboard</button>
+        </div>
+
+        <div class="concert-grid">
+          <div class="concert-panel">
+            <div class="panel-header compact">
+              <span>Event Setup</span>
+              <button class="chip online" type="button">ONLINE</button>
+            </div>
+
+            <div class="field-grid">
+              <label class="field">
+                <span>Venue profile</span>
+                <select>
+                  <option>Stadium</option>
+                  <option>Arena</option>
+                  <option>Festival Ground</option>
+                  <option>Club</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Signal path</span>
+                <select>
+                  <option>Digital Dante</option>
+                  <option>Analog Hybrid</option>
+                  <option>Wireless Mesh</option>
+                  <option>Backup Route</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Stage mode</span>
+                <select>
+                  <option>Front of House</option>
+                  <option>Monitor</option>
+                  <option>Broadcast</option>
+                  <option>Multitrack</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Output format</span>
+                <select>
+                  <option>Stereo LR</option>
+                  <option>LCR + Sub</option>
+                  <option>5.1 Surround</option>
+                  <option>Dolby Atmos</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Delay profile</span>
+                <select>
+                  <option>Fast Stage</option>
+                  <option>Balanced Arena</option>
+                  <option>Extended Delay</option>
+                  <option>Custom Map</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Network mode</span>
+                <select>
+                  <option>Primary Ethernet</option>
+                  <option>Dual Link</option>
+                  <option>Failover Wi‑Fi</option>
+                  <option>Manual Route</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="concert-panel">
+            <div class="panel-header compact">
+              <span>Performance</span>
+              <button class="chip" type="button">SCENE</button>
+            </div>
+
+            <div class="settings-stack">
+              <div class="mini-stat wide">
+                <span class="label">Current scene</span>
+                <strong>Main Show</strong>
+              </div>
+
+              <label class="field">
+                <span>Preset scene</span>
+                <select>
+                  <option>Main Show</option>
+                  <option>Soundcheck</option>
+                  <option>Opening Act</option>
+                  <option>Encore</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Channel grouping</span>
+                <select>
+                  <option>Full Band</option>
+                  <option>Vocals Focus</option>
+                  <option>DJ Setup</option>
+                  <option>Speech + Music</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Monitoring desk</span>
+                <select>
+                  <option>Master Desk</option>
+                  <option>Monitor A</option>
+                  <option>Monitor B</option>
+                  <option>Remote Mix</option>
+                </select>
+              </label>
+
+              <div class="toggle-row">
+                <span>Auto-save session</span>
+                <button class="toggle-btn active" type="button">ON</button>
+              </div>
+
+              <div class="toggle-row">
+                <span>Remote control</span>
+                <button class="toggle-btn" type="button">OFF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="concert-actions">
+          <button class="mini-btn" type="button">Save profile</button>
+          <button class="mini-btn accent" type="button">Apply live settings</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
