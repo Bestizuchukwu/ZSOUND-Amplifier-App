@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZSOUND | Amplifier</title>
+    <meta
+      name="description"
+      content="ZSOUND digital amplifier app with Dante connectivity and premium studio-grade interface."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-3"></div>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">Z</div>
+          <div class="brand-copy">
+            <div class="brand-name">ZSOUND</div>
+            <div class="brand-subtitle">Amplifier Control</div>
+          </div>
+        </div>
+
+        <div class="session-chip">
+          <span class="status-dot"></span>
+          Dante Live
+        </div>
+
+        <div class="top-actions">
+          <button class="mini-btn">Preset</button>
+          <button class="mini-btn accent">Boost</button>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <aside class="panel left-panel">
+          <div class="panel-header">
+            <span>Outputs</span>
+            <button class="chip">STUDIO</button>
+          </div>
+
+          <div class="output-card active">
+            <div class="output-row">
+              <div>
+                <p class="label">Main L/R</p>
+                <h3>Balanced Output</h3>
+              </div>
+              <div class="signal-badge">+4 dB</div>
+            </div>
+
+            <div class="meter-stack">
+              <div class="meter-line"><span style="--level: 76%"></span></div>
+              <div class="meter-line"><span style="--level: 68%"></span></div>
+              <div class="meter-line"><span style="--level: 58%"></span></div>
+              <div class="meter-line"><span style="--level: 81%"></span></div>
+            </div>
+          </div>
+
+          <div class="output-card">
+            <div class="output-row">
+              <div>
+                <p class="label">Sub</p>
+                <h3>Low Frequency</h3>
+              </div>
+              <div class="signal-badge alt">-2 dB</div>
+            </div>
+
+            <div class="meter-stack small">
+              <div class="meter-line"><span style="--level: 48%"></span></div>
+              <div class="meter-line"><span style="--level: 56%"></span></div>
+              <div class="meter-line"><span style="--level: 44%"></span></div>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <div>
+              <p class="label small">Temp</p>
+              <strong>32°C</strong>
+            </div>
+            <div>
+              <p class="label small">Protection</p>
+              <strong>Stable</strong>
+            </div>
+          </div>
+        </aside>
+
+        <section class="main-panel">
+          <div class="hero-card">
+            <div class="hero-copy">
+              <p class="eyebrow">Power Rail</p>
+              <h1>Digital Amplifier</h1>
+              <p class="subtext">
+                Precision output with networked routing, adaptive limiting, and
+                studio-grade control.
+              </p>
+            </div>
+
+            <div class="wave-visual" aria-hidden="true">
+              <div class="wave wave-1"></div>
+              <div class="wave wave-2"></div>
+            </div>
+          </div>
+
+          <div class="controls-grid">
+            <div class="knob-panel">
+              <div class="knob-ring">
+                <div class="knob-core">
+                  <span id="volumeValue">72</span>
+                </div>
+              </div>
+
+              <div class="knob-labels">
+                <span>Mute</span>
+                <span>Volume</span>
+                <span>Limit</span>
+              </div>
+
+              <input
+                id="volumeControl"
+                type="range"
+                min="0"
+                max="100"
+                value="72"
+                aria-label="Volume"
+              />
+            </div>
+
+            <div class="mix-panel">
+              <div class="mini-stat">
+                <span class="label">Input Gain</span>
+                <strong id="gainValue">+6.5 dB</strong>
+              </div>
+
+              <div class="mini-stat">
+                <span class="label">Latency</span>
+                <strong>0.7 ms</strong>
+              </div>
+
+              <div class="mini-stat">
+                <span class="label">Network</span>
+                <strong>Dante OK</strong>
+              </div>
+
+              <div class="slider-block">
+                <label for="gainSlider">Input Trim</label>
+                <input id="gainSlider" type="range" min="-12" max="18" value="6" />
+              </div>
+
+              <div class="slider-block">
+                <label for="bassSlider">Low Shelf</label>
+                <input id="bassSlider" type="range" min="-10" max="12" value="5" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel right-panel">
+          <div class="panel-header">
+            <span>Dante</span>
+            <button class="chip online">Online</button>
+          </div>
+
+          <div class="network-card">
+            <div class="network-row">
+              <span>Primary</span>
+              <strong>192.168.10.24</strong>
+            </div>
+            <div class="network-row">
+              <span>Backup</span>
+              <strong>192.168.10.25</strong>
+            </div>
+            <div class="network-row">
+              <span>Clock</span>
+              <strong>Internal</strong>
+            </div>
+            <div class="network-row">
+              <span>Latency</span>
+              <strong>1.0 ms</strong>
+            </div>
+          </div>
+
+          <div class="preset-list">
+            <button class="preset active">Live Concert</button>
+            <button class="preset">Conference</button>
+            <button class="preset">Studio Flat</button>
+            <button class="preset">Theater</button>
+          </div>
+
+          <div class="power-box">
+            <div>
+              <p class="label">Power</p>
+              <strong>1,920 W</strong>
+            </div>
+            <button class="power-btn">Standby</button>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
