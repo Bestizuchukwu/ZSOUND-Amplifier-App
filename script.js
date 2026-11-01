@@ -5,6 +5,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const backBtn = document.querySelector('.back-btn');
   const livePresetBtn = document.querySelector('.live-preset');
 
+  if (liveConcertBtn) {
+    liveConcertBtn.addEventListener('click', () => {
+      window.location.href = '/concert.html';
+    });
+  }
+
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      window.location.href = '/index.html';
+    });
+  }
+
+  if (livePresetBtn) {
+    livePresetBtn.addEventListener('click', () => {
+      window.location.href = '/concert.html';
+    });
+  }
+
   const showConcertPage = () => {
     if (!dashboard || !concertPage) return;
     dashboard.style.display = 'none';
@@ -17,16 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     concertPage.classList.remove('active');
   };
 
-  if (liveConcertBtn) {
+  if (liveConcertBtn && dashboard && concertPage) {
     liveConcertBtn.addEventListener('click', showConcertPage);
   }
 
-  if (backBtn) {
+  if (backBtn && dashboard && concertPage) {
     backBtn.addEventListener('click', showDashboard);
-  }
-
-  if (livePresetBtn) {
-    livePresetBtn.addEventListener('click', showConcertPage);
   }
 
   const volumeControl = document.getElementById('volumeControl');
